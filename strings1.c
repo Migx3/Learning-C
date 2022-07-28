@@ -6,18 +6,18 @@
 int main() {
 
     setlocale(LC_ALL, "Portuguese");
-	char s[10];
+    char s[10];
 
     printf("Teste acentos: ação, macarrão, feijão\n\n");
 
-	printf("Digite algo (scanf convencional): ");
-	scanf("%s", s);
-	fflush(stdin);
+    printf("Digite algo (scanf convencional): ");
+    scanf("%s", s);
+    fflush(stdin);
 
-	printf("Resultado: %s\n\n", s);
-	printf("Digite algo (scanf aprimorado): ");
-	scanf("%9[^\n]s", s);
-	fflush(stdin);
+    printf("Resultado: %s\n\n", s);
+    printf("Digite algo (scanf aprimorado): ");
+    scanf("%9[^\n]s", s);
+    fflush(stdin);
 
     printf("Resultado: %s\n\n", s);
 

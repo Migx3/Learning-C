@@ -1,23 +1,23 @@
-#include <stdio.h>
-#include <locale.h>
-#include <string.h>
+#include <iostream>
 
-#define N 50
+constexpr int N = 71;
+int main()
+{
+	const char password_characters[] = "0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int password_length;
+	do {
+		std::cout << "Password length [Range of 8-16]: ";
+		std::cin >> password_length;
+	} while (password_length < 8 || password_length > 16);
 
-int main() {
-    setlocale(LC_ALL, "Portuguese");
+	if (password_length >= 8 && password_length <= 16) {
+		std::cout << "Generated Password: ";
 
-    char s[N];
-    int tamanho_texto;
-
-    printf("Digite um texto: ");
-    gets(s);
-    tamanho_texto = strlen(s);
-    printf("Tamanho do texto: %d\n\n", tamanho_texto);
-
-    printf("Impressão de posição a posição:\n");
-    for (int i = 0; i < strlen(s); i++) {
-        printf("%c", s[i]);
-    }
-    return 0;
+		for (int i = 0; i < password_length; i++) {
+			std::cout << password_characters[rand() % sizeof(password_characters)];
+		}
+		std::cout << "\n\n";
+		system("pause");
+		return 0;
+	}
 }
